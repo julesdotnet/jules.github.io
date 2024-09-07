@@ -9,21 +9,37 @@
     flex-direction: column;
 }
 
+
 .main {
     display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    height: 100vh;
 }
 
 .left-container {
-    height: 100vh;
     width: 50%;
     background-color: #342643;
+    height: 100vh; /* Full height */
 }
 
 .right-container {
-    height: 1vh;
     width: 50%;
     background-color: #03120E;
-    height: 100vh;
+    height: 100vh; /* Full height */
+}
+
+/* Media query to handle wrapping on tall or narrow screens */
+@media (max-aspect-ratio: 1/1) {
+    .main {
+        flex-direction: column; /* Stack the items vertically */
+    }
+
+    .left-container, .right-container {
+        width: 100%; /* Take full width when stacked vertically */
+        height: 50vh; /* Adjust height when wrapped */
+    }
 }
 
 .formdiv {
